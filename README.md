@@ -27,3 +27,5 @@ Whenever code is pushed to a branch:
 # Repo Health Checker
 
 [![Repo Health Checker](https://github.com/gokulcodincity/repo-health-checker/actions/workflows/check.yml/badge.svg?branch=main&event=push)](https://github.com/gokulcodincity/repo-health-checker/actions/workflows/check.yml)
+
+This project validates repository quality automatically using GitHub Actions.
