@@ -4,7 +4,7 @@ echo "Starting Repo Health Checks..."
 
 # CHECK 1
 if [ ! -f README.md ]; then
-    echo "README.md file missing"
+    echo "FAIL: README.md file missing"
     exit 1
 fi
 
@@ -12,19 +12,19 @@ fi
 line_count=$(wc -l < README.md)
 
 if [ "$line_count" -le 5 ]; then
-    echo "README.md has less than 5 lines"
+    echo "FAIL: README.md has less than 5 lines"
     exit 1
 fi
 
 # CHECK 3
 if [ ! -f .gitignore ]; then
-    echo ".gitignore missing"
+    echo "FAIL: .gitignore missing"
     exit 1
 fi
 
 # CHECK 4
 if find . -name ".env" | grep -q ".env"; then
-    echo ".env file found"
+    echo "FAIL: .env file found"
     exit 1
 fi
 
@@ -39,5 +39,5 @@ else
     echo "PASS: Commit message format is valid"
 fi
 
-echo "All checks passed!"
+echo "SUCCESS: All repository checks passed!"
 exit 0
