@@ -23,3 +23,7 @@ Whenever code is pushed to a branch:
 2. Runs check.sh
 3. Validates repository
 4. Shows PASS or FAIL result
+
+# Repo Health Checker
+
+[![Repo Health Checker](https://github.com/gokulcodincity/repo-health-checker/actions/workflows/check.yml/badge.svg?branch=main&event=push)](https://github.com/gokulcodincity/repo-health-checker/actions/workflows/check.yml)
