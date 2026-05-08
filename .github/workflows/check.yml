@@ -3,7 +3,8 @@ name: Repo Health Checker
 on:
   push:
     branches:
-      - "**"
+      - main
+      - feature/**
 
 jobs:
   health-check:
@@ -13,8 +14,19 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v4
 
+      - name: Workflow Start Message
+        run: echo "Starting Repository Validation Pipeline..."
+
       - name: Give Execute Permission
         run: chmod +x check.sh
 
       - name: Run Health Checks
         run: ./check.sh
+
+      - name: Workflow Success Message
+        if: success()
+        run: echo "SUCCESS: All repository validation checks passed successfully!"
+
+      - name: Workflow Failure Message
+        if: failure()
+        run: echo "FAILURE: Repository validation failed. Please check the logs above."
