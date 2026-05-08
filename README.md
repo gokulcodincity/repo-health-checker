@@ -1,17 +1,37 @@
-# Repo Health Checker# Repo Health Checker
+# Repo Health Checker
 
-This project validates repository quality automatically using GitHub Actions.
+[![Repo Health Checker](https://github.com/gokulcodincity/repo-health-checker/actions/workflows/check.yml/badge.svg?branch=main&event=push)](https://github.com/gokulcodincity/repo-health-checker/actions/workflows/check.yml)
+
+This project automatically validates repository quality using Shell Script and GitHub Actions.
 
 ## Checks Included
 
-- README validation
+- README.md validation
+- README line count validation
 - .gitignore validation
-- Secret file detection
-- CI/CD workflow validation
+- Secret file detection (.env)
+- Commit message validation
 
 ## Technologies Used
 
 - Git
+- GitHub
 - GitHub Actions
-- Shell Script
+- Shell Scripting
 - Linux
+
+## Workflow
+
+Whenever code is pushed:
+1. GitHub Actions starts an Ubuntu Linux runner
+2. The repository is cloned
+3. check.sh script runs validations
+4. CI pipeline shows PASS or FAIL
+
+## CI/CD Features
+
+- Automatic repository validation
+- Red pipeline on failure
+- Green pipeline on success
+- GitHub Actions integration
+- CI status badge
