@@ -12,7 +12,8 @@ This project automatically validates repository quality using Shell Script and G
 - Secret file detection (.env)
 - Commit message validation
 
-## Technologies Used
+### 2. .gitignore Validation
+Ensures .gitignore file exists to avoid committing unnecessary files.
 
 - Git
 - GitHub
